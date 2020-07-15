@@ -73,7 +73,6 @@ function PageLink(linkHeader) {
     }, {});
 }
 
-var Home = 'http://gist.gongzhitaao.org';
-// var Home = 'http://0.0.0.0:4000';
+var Home = 'https://etpinard.xyz/gist/';
 var GistAPI = 'https://api.github.com';
 var GistRaw = 'https://gist.githubusercontent.com/';

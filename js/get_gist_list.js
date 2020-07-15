@@ -2,7 +2,6 @@
 
 (function ($, undefined) {
 
-  // var viewurl = 'https://js.gongzhitaao.org/gist/?';
   var viewurl = Home + '/gist/?';
   var PerPage = 30;
   var username = null;
