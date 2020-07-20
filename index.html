@@ -2,46 +2,71 @@
   <head>
     <meta name="charset" content="utf-8" />
     <title>Enjoy my work</title>
-    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/gist/css/main.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://yandex.st/highlightjs/8.0/styles/googlecode.min.css">
+
     <style>
-      .gists {
-          overflow-y: auto;
+      body {
+          width: 90%;
+          margin: auto;
+          font-family: 'Droid Serif', serif;
+          font-size: 16px;
       }
-      a.gist {
-          display: inline-block;
-          width: 230px;
-          height: 80px;
-          margin: 3px;
-          text-shadow: 1px 1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, -1px -1px 0 #fff;
-          float: left;
-          position: relative;
-          border: 1px solid #eee;
+      a {
+          text-decoration: none;
+          color: maroon;
       }
-      a .description {
-          position: absolute;
-          padding: 20px 5px;
-          vertical-align: middle;
+      h1,h2 {
+          margin: 1.5em 0;
       }
-      h1 {
-          font-size: 48px;
-          font-weight: bold;
+      pre code {
+          font-size: 16px;
       }
-      .refresher {
-          cursor: pointer;
-          margin: 2em 0;
+      .gistid:before {
+          content: "#";
+      }
+      .gist-date {
+          float: right;
+      }
+      .gist-date {
+          font-size: 14px;
+          color: #848482;
+      }
+      .gist-source {
+          overflow: auto;
+      }
+      .iframe {
+          padding-top: 40px;
+          width: 85%;
+          margin: auto;
+          height: 700px;
+      }
+      iframe {
+          border: 1px solid #DEDEDE;
           width: 100%;
-          text-align: center;
+          height: 100%;
       }
     </style>
   </head>
   <body>
-    <h1><a class="user"><i class="fa fa-github-alt">&nbsp;</i></a></h1>
-    <div class="gists"></div>
-    <div><i class="fa fa-refresh refresher"></i></div>
-    <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
-    <script type="text/javascript" src="/gist/js/common.js"></script>
-    <script type="text/javascript" src="/gist/js/get_gist_list.js"></script>
+    <div>
+      <a class="user"><i class="fa fa-github-alt"></i>&nbsp;</a> / <a class="gistid"></a>
+      <span class="gist-date"></span>
+    </div>
+    <div class="iframe">
+      <iframe class="gist-demo" marginheight="0" marginwidth="0" scrolling="no"></iframe>
+    </div>
+    <div class="gist-readme"></div>
+    <div class="gist-sources"></div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
+    <script src="https://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+    <script type="text/javascript">
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/get_gist_content.js"></script>
   </body>
 </html>
