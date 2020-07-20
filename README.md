@@ -1,17 +1,6 @@
-Gist Viewer with Github Page
-============================
+# Gist Viewer with Github Page
 
-Try:
+Forked from https://github.com/gongzhitaao/gist, adapted for my needs
 
-```
-http:/gist.gongzhitaao.org/?user=your_github_username
-```
+Available at: https://etpinard.xyz/gist?id=<enter-gist-id-here>
 
-This will list all your gist containing a `README.md`, `index.html`
-and `thumbnail.png`.
-
-Example:
-
-```
-http://gist.gongzhitaao.org/?user=gongzhitaao
-```
