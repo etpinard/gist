@@ -6,6 +6,9 @@
     var param = new UrlParam(window.location.search);
     var id = param.id;
 
+    // TODO need to handle truncation
+    // https://developer.github.com/v3/gists/#truncation
+
     $.ajax({
       type: 'GET',
       url: GistAPI + '/gists/' + id,
