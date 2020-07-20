@@ -24,6 +24,15 @@
         var date = moment(gist.data['updated_at']).format("YYYY MMM DD, h:mm a");
         $('.gist-date').text(date);
 
+        // get title from title file (that shows up fist on gist.github.com)
+        var title = 'gist - '
+        for (var k in gist.data.files) {
+          if (k[0] === ' ') {
+            title += gist.data.files[k].content;
+            break;
+          }
+        }
+        document.title = title;
 
         // iframe demo
         var iframe = $('.gist-demo')[0];
