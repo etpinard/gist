@@ -13,7 +13,6 @@
       success: function (gist) {
         // username and url
         $('.user')
-          .attr('href', Home + '/?user=' + gist.data.owner.login)
           .append(gist.data.owner.login);
 
         // gist id and url
@@ -25,8 +24,6 @@
         var date = moment(gist.data['updated_at']).format("YYYY MMM DD, h:mm a");
         $('.gist-date').text(date);
 
-        // title
-        $('.gist-description').prepend(gist.data.description);
 
         // iframe demo
         var iframe = $('.gist-demo')[0];

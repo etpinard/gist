@@ -29,50 +29,6 @@ function UrlParam(url) {
       }, {});
 }
 
-// Credits:
-// https://github.com/eclipse/egit-github/blob/master/org.eclipse.egit.github.core/src/org/eclipse/egit/github/core/client/PageLinks.java#L43-75
-// https://github.com/thlorenz/parse-link-header
-function PageLink(linkHeader) {
-
-  if (!linkHeader)
-    return null;
-
-  return linkHeader
-    .split(',')
-    .reduce(function(acc, cur) {
-      var segments = cur.split(';');
-      if (segments.length < 2)
-        return acc;
-
-      var link = segments[0].trim();
-      if (link[0] !== '<' || link[link.length-1] !== '>')
-        return acc;
-      link = link.substring(1, link.length - 1);
-
-      var param = UrlParam(link);
-
-      for (var i = 1; i < segments.length; ++i) {
-
-        var rel = segments[i].trim().split('=');
-        if (rel.length < 2 || rel[0] !== 'rel')
-          continue;
-
-        var val = rel[1];
-        if (val[0] === '"' && val[val.length-1] === '"')
-          val = val.substring(1, val.length - 1);
-
-        acc[val] = {
-          'page': param.page ? param.page : 0,
-          'per_page': param.per_page ? param.per_page : 0,
-          'rel': val,
-          'url': link
-        };
-      }
-
-      return acc;
-    }, {});
-}
-
 var Home = 'https://etpinard.xyz/gist/';
 var GistAPI = 'https://api.github.com';
 var GistRaw = 'https://gist.githubusercontent.com/';
